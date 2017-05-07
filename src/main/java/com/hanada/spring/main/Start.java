@@ -11,7 +11,13 @@ public class Start {
     public static void main(String[] args) {
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
-        T800 modelT800 = (T800) context.getBean("t800withProperty");
+        T800 modelT800 = (T800) context.getBean("t800");
         modelT800.doAction();
+        /*
+        Robot do action
+        Toshiba head thinking.
+        Toshiba leg going.
+        Toshiba hand catching.
+         */
     }
 }
