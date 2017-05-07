@@ -13,7 +13,6 @@
         если какое либо значение property не указано, то будет взято значение из ref конструктора-->
         <property name="head" ref="toshibaHead"/>
         <property name="leg" ref="toshibaLeg"/>
-        <property name="hand" ref="toshibaHand"/>
     </bean>
 
     <bean id="t800withProperty" class="com.hanada.spring.implementation.T800">

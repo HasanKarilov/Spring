@@ -17,7 +17,7 @@ public class Start {
         Robot do action
         Toshiba head thinking.
         Toshiba leg going.
-        Toshiba hand catching.
+        Sony hand catching.
          */
     }
 }
