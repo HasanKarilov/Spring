@@ -31,5 +31,27 @@ public class T800 implements Robot {
         hand.catchSomething();
     }
 
+    public Head getHead() {
+        return head;
+    }
 
+    public void setHead(Head head) {
+        this.head = head;
+    }
+
+    public Leg getLeg() {
+        return leg;
+    }
+
+    public void setLeg(Leg leg) {
+        this.leg = leg;
+    }
+
+    public Hand getHand() {
+        return hand;
+    }
+
+    public void setHand(Hand hand) {
+        this.hand = hand;
+    }
 }

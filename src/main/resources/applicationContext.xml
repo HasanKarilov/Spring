@@ -9,6 +9,11 @@
         <constructor-arg ref="sonyHand"/>
     </bean>
 
+    <bean id="t800withProperty" class="com.hanada.spring.implementation.T800">
+        <property name="head" ref="sonyHead"/>
+        <property name="leg" ref="sonyLeg"/>
+        <property name="hand" ref="toshibaHand"/>
+    </bean>
 
     <bean id="sonyHead" class="com.hanada.spring.implementation.sony.SonyHead"/>
     <bean id="sonyLeg" class="com.hanada.spring.implementation.sony.SonyLeg"/>
