@@ -22,6 +22,21 @@
         <property name="hand" ref="toshibaHand"/>
     </bean>
 
+    <!--Обьекты указоваем через property а обычные(примитивые) свойства указываем в конструкторе-->
+    <bean id="primitiveConstructor" class="com.hanada.spring.implementation.T800">
+        <!--Порядок элементов конструктора важен, если передать параметры не правильной
+         последовательтости то получим ошибку. Но можно задать индексы (index = "0")
+         индекс начинается с нуля. Еще есть параметр type для указания типа параметра-->
+        <!--value - это значения которые передаются на как обьект, это примитивные типы-->
+        <constructor-arg value="Red" index="0" type="java.lang.String"/>
+        <constructor-arg value="2016" index="1" type="int"/>
+        <constructor-arg value="true" index="2" type="boolean"/>
+
+        <property name="head" ref="sonyHead"/>
+        <property name="leg" ref="sonyLeg"/>
+        <property name="hand" ref="toshibaHand"/>
+    </bean>
+
     <bean id="sonyHead" class="com.hanada.spring.implementation.sony.SonyHead"/>
     <bean id="sonyLeg" class="com.hanada.spring.implementation.sony.SonyLeg"/>
     <bean id="sonyHand" class="com.hanada.spring.implementation.sony.SonyHand"/>

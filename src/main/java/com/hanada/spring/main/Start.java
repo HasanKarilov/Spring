@@ -11,7 +11,7 @@ public class Start {
     public static void main(String[] args) {
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
-        T800 modelT800 = (T800) context.getBean("t800");
+        T800 modelT800 = (T800) context.getBean("primitiveConstructor");
         modelT800.doAction();
         /*
         Robot do action
