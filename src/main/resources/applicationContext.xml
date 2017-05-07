@@ -3,6 +3,19 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
-    <bean id="t800" class="com.hanada.spring.implementation.T800"/>
+    <bean id="t800" class="com.hanada.spring.implementation.T800">
+        <constructor-arg ref="sonyHead"/>
+        <constructor-arg ref="sonyLeg"/>
+        <constructor-arg ref="sonyHand"/>
+    </bean>
+
+
+    <bean id="sonyHead" class="com.hanada.spring.implementation.sony.SonyHead"/>
+    <bean id="sonyLeg" class="com.hanada.spring.implementation.sony.SonyLeg"/>
+    <bean id="sonyHand" class="com.hanada.spring.implementation.sony.SonyHand"/>
+
+    <bean id="toshibaHead" class="com.hanada.spring.implementation.toshiba.ToshibaHead"/>
+    <bean id="toshibaLeg" class="com.hanada.spring.implementation.toshiba.ToshibaLeg"/>
+    <bean id="toshibaHand" class="com.hanada.spring.implementation.toshiba.ToshibaHand"/>
 
 </beans>

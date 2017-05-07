@@ -18,8 +18,17 @@ public class T800 implements Robot {
 
     }
 
+    public T800(Head head, Leg leg, Hand hand) {
+        this.head = head;
+        this.leg = leg;
+        this.hand = hand;
+    }
+
     public void doAction(){
         System.out.println("Robot do action");
+        head.calc();
+        leg.go();
+        hand.catchSomething();
     }
 
 
