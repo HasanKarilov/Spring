@@ -44,7 +44,7 @@
     <bean id="sonyLeg" class="com.hanada.spring.implementation.sony.SonyLeg"/>
     <bean id="sonyHand" class="com.hanada.spring.implementation.sony.SonyHand"/>
 
-    <bean id="toshibaHead" class="com.hanada.spring.implementation.toshiba.ToshibaHead"/>
+    <bean id="toshibaHead" class="com.hanada.spring.implementation.toshiba.ToshibaHead" scope="prototype"/>
     <bean id="toshibaLeg" class="com.hanada.spring.implementation.toshiba.ToshibaLeg"/>
     <bean id="toshibaHand" class="com.hanada.spring.implementation.toshiba.ToshibaHand"/>
 
