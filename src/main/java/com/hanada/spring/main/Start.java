@@ -19,10 +19,15 @@ public class Start {
         System.out.println(modelT800.getHead());
 
         /*
+        если указать default-init-method и default-destroy-method то они
+        будут вызываться во всех бинах при инициализации и уничтожении
+
         init.
-        com.hanada.spring.implementation.toshiba.ToshibaHead@6b09bb57
-        com.hanada.spring.implementation.toshiba.ToshibaHead@6b09bb57
-        com.hanada.spring.implementation.toshiba.ToshibaHead@6b09bb57
+        init.
+        init.
+        com.hanada.spring.implementation.toshiba.ToshibaHead@3e9b1010
+        com.hanada.spring.implementation.toshiba.ToshibaHead@3e9b1010
+        com.hanada.spring.implementation.toshiba.ToshibaHead@3e9b1010
         */
     }
 }
