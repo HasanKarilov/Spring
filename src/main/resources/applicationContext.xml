@@ -6,7 +6,7 @@ default-init-method="initMethod"
        default-destroy-method="destroyMethod"
 >
 
-    <bean id="t800" class="com.hanada.spring.implementation.T800" scope="prototype">
+    <bean id="t800" class="com.hanada.spring.implementation.T800" scope="prototype" lazy-init="true">
         <!--Потом конструктор-->
         <constructor-arg ref="sonyHead"/>
         <constructor-arg ref="sonyLeg"/>
@@ -18,7 +18,7 @@ default-init-method="initMethod"
         <property name="leg" ref="toshibaLeg"/>
     </bean>
 
-    <bean id="t800withProperty" class="com.hanada.spring.implementation.T800">
+    <bean id="t800withProperty" class="com.hanada.spring.implementation.T800" lazy-init="true">
         <!--property атрибут name должен совпадать со свойством из класса T800-->
         <property name="head" ref="sonyHead"/>
         <property name="leg" ref="sonyLeg"/>
@@ -26,7 +26,7 @@ default-init-method="initMethod"
     </bean>
 
     <!--Обьекты указоваем через property а обычные(примитивые) свойства указываем в конструкторе-->
-    <bean id="primitiveConstructor" class="com.hanada.spring.implementation.T800">
+    <bean id="primitiveConstructor" class="com.hanada.spring.implementation.T800" lazy-init="true">
         <!--Порядок элементов конструктора важен, если передать параметры не правильной
          последовательтости то получим ошибку. Но можно задать индексы (index = "0")
          индекс начинается с нуля. Еще есть параметр type для указания типа параметра-->
@@ -44,7 +44,7 @@ default-init-method="initMethod"
     <bean id="sonyLeg" class="com.hanada.spring.implementation.sony.SonyLeg"/>
     <bean id="sonyHand" class="com.hanada.spring.implementation.sony.SonyHand"/>
 
-    <bean id="toshibaHead" class="com.hanada.spring.implementation.toshiba.ToshibaHead" scope="prototype"/>
+    <bean id="toshibaHead" class="com.hanada.spring.implementation.toshiba.ToshibaHead" scope="prototype" lazy-init="true"/>
     <bean id="toshibaLeg" class="com.hanada.spring.implementation.toshiba.ToshibaLeg"/>
     <bean id="toshibaHand" class="com.hanada.spring.implementation.toshiba.ToshibaHand"/>
 

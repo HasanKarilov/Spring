@@ -19,17 +19,15 @@ public class Start {
         System.out.println(modelT800.getHead());
 
         /*
-        если указать default-init-method и default-destroy-method то они
-        будут вызываться во всех бинах при инициализации и уничтожении
+        lazy-init будем создавать бины по обращении, по умолчанию контейнер инициализирует
+        все бины даже если они не используются
 
         init.
+        com.hanada.spring.implementation.toshiba.ToshibaHead@3632be31
         init.
+        com.hanada.spring.implementation.toshiba.ToshibaHead@4e9ba398
         init.
-        com.hanada.spring.implementation.toshiba.ToshibaHead@3e9b1010
-        init.
-        com.hanada.spring.implementation.toshiba.ToshibaHead@185d8b6
-        init.
-        com.hanada.spring.implementation.toshiba.ToshibaHead@67784306
+        com.hanada.spring.implementation.toshiba.ToshibaHead@6d7b4f4c
         */
     }
 }
