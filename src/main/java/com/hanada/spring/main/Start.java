@@ -12,11 +12,11 @@ public class Start {
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
         T800 modelT800 = (T800) context.getBean("t800");
-        System.out.println(modelT800.getHead());
+        System.out.println(modelT800);
         /*
-        com.hanada.spring.implementation.T800@10bdf5e5 - method init()
-        com.hanada.spring.implementation.T800@1d16f93d - method init()
-        com.hanada.spring.implementation.sony.SonyHead@67b92f0a
+        InitializingBean and DisposableBean methods
+        com.hanada.spring.implementation.T800@2b2948e2 - method init()
+        com.hanada.spring.implementation.T800@2b2948e2
          */
     }
 }

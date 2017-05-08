@@ -2,11 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd"
-       default-init-method="initMethod"
-       default-destroy-method="destroyMethod"
+       default-lazy-init="true"
 >
 
-    <bean id="t800" class="com.hanada.spring.implementation.T800" scope="prototype"
+    <bean id="t800" class="com.hanada.spring.implementation.T800"
           p:hand-ref="toshibaHand" p:leg-ref="sonyLeg" p:head-ref="sonyHead">
 
         <constructor-arg value="silver" index="0" type="java.lang.String" />
@@ -27,7 +26,7 @@
     <bean id="sonyLeg" class="com.hanada.spring.implementation.sony.SonyLeg"/>
     <bean id="sonyHand" class="com.hanada.spring.implementation.sony.SonyHand"/>
 
-    <bean id="toshibaHead" class="com.hanada.spring.implementation.toshiba.ToshibaHead" scope="prototype" lazy-init="true"/>
+    <bean id="toshibaHead" class="com.hanada.spring.implementation.toshiba.ToshibaHead"/>
     <bean id="toshibaLeg" class="com.hanada.spring.implementation.toshiba.ToshibaLeg"/>
     <bean id="toshibaHand" class="com.hanada.spring.implementation.toshiba.ToshibaHand"/>
 
