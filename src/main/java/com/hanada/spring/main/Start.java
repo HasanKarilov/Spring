@@ -11,13 +11,16 @@ public class Start {
     public static void main(String[] args) {
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
-        T800 modelT800 = (T800) context.getBean("primitiveConstructor");
-        modelT800.doAction();
+        T800 modelT800 = (T800) context.getBean("t800withProperty");
+        System.out.println(modelT800);
+        modelT800 = (T800) context.getBean("t800withProperty");
+        System.out.println(modelT800);
+        modelT800 = (T800) context.getBean("t800withProperty");
+        System.out.println(modelT800);
         /*
-        Robot do action
-        Toshiba head thinking.
-        Toshiba leg going.
-        Sony hand catching.
-         */
+        com.hanada.spring.implementation.T800@6536e911
+        com.hanada.spring.implementation.T800@6536e911
+        com.hanada.spring.implementation.T800@6536e911
+        */
     }
 }
