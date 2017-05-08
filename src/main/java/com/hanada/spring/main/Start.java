@@ -14,9 +14,14 @@ public class Start {
         T800 modelT800 = (T800) context.getBean("t800");
         System.out.println(modelT800);
         /*
-        InitializingBean and DisposableBean methods
-        com.hanada.spring.implementation.T800@2b2948e2 - method init()
-        com.hanada.spring.implementation.T800@2b2948e2
+        BeanPostProcessor:
+
+        com.hanada.spring.implementation.toshiba.ToshibaHand@78c03f1f - postProcessBeforeInitialization()
+        com.hanada.spring.implementation.sony.SonyHead@5a8e6209 - postProcessBeforeInitialization()
+        com.hanada.spring.implementation.sony.SonyLeg@4b4523f8 - postProcessBeforeInitialization()
+        com.hanada.spring.implementation.T800@731a74c - method init()
+        com.hanada.spring.implementation.T800@731a74c - postProcessBeforeInitialization()
+        com.hanada.spring.implementation.T800@731a74c
          */
     }
 }
