@@ -54,6 +54,14 @@ public class T800 implements Robot {
         System.out.println("Coler: " + color + " year: " + year + " can sound: " + isSoungEnable);
     }
 
+    public void initMethod(){
+        System.out.println("init.");
+    }
+
+    public void destroyMethod(){
+        System.out.println("Destroy.");
+    }
+
     public Head getHead() {
         return head;
     }

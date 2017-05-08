@@ -3,7 +3,10 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
-    <bean id="t800" class="com.hanada.spring.implementation.T800">
+    <bean id="t800" class="com.hanada.spring.implementation.T800"
+    init-method="initMethod"
+    destroy-method="destroyMethod"
+    scope="prototype">
         <!--Потом конструктор-->
         <constructor-arg ref="sonyHead"/>
         <constructor-arg ref="sonyLeg"/>
@@ -15,7 +18,7 @@
         <property name="leg" ref="toshibaLeg"/>
     </bean>
 
-    <bean id="t800withProperty" class="com.hanada.spring.implementation.T800" scope="prototype">
+    <bean id="t800withProperty" class="com.hanada.spring.implementation.T800">
         <!--property атрибут name должен совпадать со свойством из класса T800-->
         <property name="head" ref="sonyHead"/>
         <property name="leg" ref="sonyLeg"/>
@@ -37,7 +40,7 @@
         <property name="hand" ref="toshibaHand"/>
     </bean>
 
-    <bean id="sonyHead" class="com.hanada.spring.implementation.sony.SonyHead" scope="prototype"/>
+    <bean id="sonyHead" class="com.hanada.spring.implementation.sony.SonyHead"/>
     <bean id="sonyLeg" class="com.hanada.spring.implementation.sony.SonyLeg"/>
     <bean id="sonyHand" class="com.hanada.spring.implementation.sony.SonyHand"/>
 
