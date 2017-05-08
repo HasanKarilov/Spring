@@ -6,7 +6,7 @@ default-init-method="initMethod"
        default-destroy-method="destroyMethod"
 >
 
-    <bean id="t800" class="com.hanada.spring.implementation.T800">
+    <bean id="t800" class="com.hanada.spring.implementation.T800" scope="prototype">
         <!--Потом конструктор-->
         <constructor-arg ref="sonyHead"/>
         <constructor-arg ref="sonyLeg"/>

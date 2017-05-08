@@ -26,8 +26,10 @@ public class Start {
         init.
         init.
         com.hanada.spring.implementation.toshiba.ToshibaHead@3e9b1010
-        com.hanada.spring.implementation.toshiba.ToshibaHead@3e9b1010
-        com.hanada.spring.implementation.toshiba.ToshibaHead@3e9b1010
+        init.
+        com.hanada.spring.implementation.toshiba.ToshibaHead@185d8b6
+        init.
+        com.hanada.spring.implementation.toshiba.ToshibaHead@67784306
         */
     }
 }
