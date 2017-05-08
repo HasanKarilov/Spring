@@ -5,8 +5,7 @@
 
     <bean id="t800" class="com.hanada.spring.implementation.T800"
     init-method="initMethod"
-    destroy-method="destroyMethod"
-    scope="prototype">
+    destroy-method="destroyMethod">
         <!--Потом конструктор-->
         <constructor-arg ref="sonyHead"/>
         <constructor-arg ref="sonyLeg"/>
