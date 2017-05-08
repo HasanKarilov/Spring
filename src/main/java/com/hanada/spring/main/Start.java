@@ -12,16 +12,16 @@ public class Start {
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
         T800 modelT800 = (T800) context.getBean("t800withProperty");
-        System.out.println(modelT800);
+        System.out.println(modelT800.getHead());
         modelT800 = (T800) context.getBean("t800withProperty");
-        System.out.println(modelT800);
+        System.out.println(modelT800.getHead());
         modelT800 = (T800) context.getBean("t800withProperty");
-        System.out.println(modelT800);
+        System.out.println(modelT800.getHead());
 
         /* В prototype при каждом обращении к бину создается новый обьект
-        com.hanada.spring.implementation.T800@6536e911
-        com.hanada.spring.implementation.T800@520a3426
-        com.hanada.spring.implementation.T800@18eed35
+        com.hanada.spring.implementation.sony.SonyHead@6536e911
+        com.hanada.spring.implementation.sony.SonyHead@520a3426
+        com.hanada.spring.implementation.sony.SonyHead@18eed359
         */
     }
 }
