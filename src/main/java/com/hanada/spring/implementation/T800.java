@@ -57,11 +57,11 @@ public class T800 implements Robot, InitializingBean, DisposableBean{
     }
 
     public void destroy() throws Exception {
-        System.out.println("destroy.");
+        System.out.println(this + " - method destroy()");
     }
 
     public void afterPropertiesSet() throws Exception {
-        System.out.println("init.");
+        System.out.println(this + " - method init()");
     }
 
     public Head getHead() {
