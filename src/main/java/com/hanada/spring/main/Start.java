@@ -12,22 +12,17 @@ public class Start {
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
         T800 modelT800 = (T800) context.getBean("t800");
-        System.out.println(modelT800.getHead());
-        modelT800 = (T800) context.getBean("t800");
-        System.out.println(modelT800.getHead());
-        modelT800 = (T800) context.getBean("t800");
-        System.out.println(modelT800.getHead());
+//        System.out.println(modelT800.getHead());
+//        modelT800 = (T800) context.getBean("t800");
+//        System.out.println(modelT800.getHead());
+//        modelT800 = (T800) context.getBean("t800");
+//        System.out.println(modelT800.getHead());
 
         /*
         lazy-init будем создавать бины по обращении, по умолчанию контейнер инициализирует
         все бины даже если они не используются
 
-        init.
-        com.hanada.spring.implementation.toshiba.ToshibaHead@3632be31
-        init.
-        com.hanada.spring.implementation.toshiba.ToshibaHead@4e9ba398
-        init.
-        com.hanada.spring.implementation.toshiba.ToshibaHead@6d7b4f4c
+        Если не создать ни одного бина, то контейнер ничего не создаст
         */
     }
 }
