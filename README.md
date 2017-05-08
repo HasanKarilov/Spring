@@ -40,3 +40,28 @@ Prototype
  Здесь мы можем участвовать в жизненном цикле нашего бина, делать доп обработки (похоже на фильтрацию)
  
  BeanPostProcessor - если хотим обрабатовать инициализацию нашего обьекта т.е. участвовать в жизненном цикле обьекта то используем этот интерфейс.
+ 
+ Последовательность инициализаций бинов. В xml атрибут depends-on = "имя бина" указывает что сначала инициализируется бин указанный в depends-on потом сам бин
+ 
+ <bean id="t800" class="com.hanada.spring.implementation.T800"
+           p:hand-ref="toshibaHand" p:leg-ref="sonyLeg" p:head-ref="sonyHead"
+     depends-on="databaseBean">
+ 
+         <constructor-arg value="silver" index="0" type="java.lang.String" />
+         <constructor-arg value="2005" index="1" type="int" />
+         <constructor-arg value="true" index="2" type="boolean" />
+ </bean>
+ 
+ <bean id="databaseBean" class="com.hanada.spring.implementation.Database"/>
+ 
+ Сначала инициализируются обьекты бина databaseBean затем t800:
+ Test connection!
+         com.hanada.spring.implementation.Database@ae45eb6 - postProcessBeforeInitialization()
+         com.hanada.spring.implementation.toshiba.ToshibaHand@3e9b1010 - postProcessBeforeInitialization()
+         com.hanada.spring.implementation.sony.SonyHead@5ae63ade - postProcessBeforeInitialization()
+         com.hanada.spring.implementation.sony.SonyLeg@610694f1 - postProcessBeforeInitialization()
+         com.hanada.spring.implementation.T800@43814d18 - method init()
+         com.hanada.spring.implementation.T800@43814d18 - postProcessBeforeInitialization()
+         com.hanada.spring.implementation.T800@43814d18
+ 
+ 
