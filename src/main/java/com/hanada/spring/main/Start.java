@@ -17,10 +17,11 @@ public class Start {
         System.out.println(modelT800);
         modelT800 = (T800) context.getBean("t800withProperty");
         System.out.println(modelT800);
-        /*
+
+        /* В prototype при каждом обращении к бину создается новый обьект
         com.hanada.spring.implementation.T800@6536e911
-        com.hanada.spring.implementation.T800@6536e911
-        com.hanada.spring.implementation.T800@6536e911
+        com.hanada.spring.implementation.T800@520a3426
+        com.hanada.spring.implementation.T800@18eed35
         */
     }
 }
