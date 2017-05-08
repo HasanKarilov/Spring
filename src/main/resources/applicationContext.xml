@@ -15,7 +15,7 @@
         <property name="leg" ref="toshibaLeg"/>
     </bean>
 
-    <bean id="t800withProperty" class="com.hanada.spring.implementation.T800">
+    <bean id="t800withProperty" class="com.hanada.spring.implementation.T800" scope="prototype">
         <!--property атрибут name должен совпадать со свойством из класса T800-->
         <property name="head" ref="sonyHead"/>
         <property name="leg" ref="sonyLeg"/>
