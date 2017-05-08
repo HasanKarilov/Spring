@@ -1,43 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd"
-default-init-method="initMethod"
+       default-init-method="initMethod"
        default-destroy-method="destroyMethod"
 >
 
-    <bean id="t800" class="com.hanada.spring.implementation.T800" scope="prototype" lazy-init="true">
-        <!--Потом конструктор-->
-        <constructor-arg ref="sonyHead"/>
-        <constructor-arg ref="sonyLeg"/>
-        <constructor-arg ref="sonyHand"/>
+    <bean id="t800" class="com.hanada.spring.implementation.T800" scope="prototype"
+          p:hand-ref="toshibaHand" p:leg-ref="sonyLeg" p:head-ref="sonyHead">
 
-        <!--Сначала инициализирутся свойства, property значения перекравают значения конструктора,
-        если какое либо значение property не указано, то будет взято значение из ref конструктора-->
-        <property name="head" ref="toshibaHead"/>
-        <property name="leg" ref="toshibaLeg"/>
+        <constructor-arg value="silver" index="0" type="java.lang.String" />
+        <constructor-arg value="2005" index="1" type="int" />
+        <constructor-arg value="true" index="2" type="boolean" />
+
     </bean>
 
-    <bean id="t800withProperty" class="com.hanada.spring.implementation.T800" lazy-init="true">
-        <!--property атрибут name должен совпадать со свойством из класса T800-->
-        <property name="head" ref="sonyHead"/>
-        <property name="leg" ref="sonyLeg"/>
-        <property name="hand" ref="toshibaHand"/>
-    </bean>
 
-    <!--Обьекты указоваем через property а обычные(примитивые) свойства указываем в конструкторе-->
-    <bean id="primitiveConstructor" class="com.hanada.spring.implementation.T800" lazy-init="true">
-        <!--Порядок элементов конструктора важен, если передать параметры не правильной
-         последовательтости то получим ошибку. Но можно задать индексы (index = "0")
-         индекс начинается с нуля. Еще есть параметр type для указания типа параметра-->
-        <!--value - это значения которые передаются на как обьект, это примитивные типы-->
-        <constructor-arg value="Red" index="0" type="java.lang.String"/>
-        <constructor-arg value="2016" index="1" type="int"/>
-        <constructor-arg value="true" index="2" type="boolean"/>
+    <bean id="t1000Empty" class="com.hanada.spring.implementation.T800">
+        <constructor-arg ref="sonyHand" />
+        <constructor-arg ref="sonyLeg" />
+        <constructor-arg ref="toshibaHead" />
 
-        <property name="head" ref="sonyHead"/>
-        <property name="leg" ref="sonyLeg"/>
-        <property name="hand" ref="toshibaHand"/>
     </bean>
 
     <bean id="sonyHead" class="com.hanada.spring.implementation.sony.SonyHead"/>
