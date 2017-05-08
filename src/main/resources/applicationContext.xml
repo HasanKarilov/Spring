@@ -1,34 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd"
-       default-lazy-init="true"
 >
 
-    <bean id="t800" class="com.hanada.spring.implementation.T800"
-          p:hand-ref="toshibaHand" p:leg-ref="sonyLeg" p:head-ref="sonyHead">
-
-        <constructor-arg value="silver" index="0" type="java.lang.String" />
-        <constructor-arg value="2005" index="1" type="int" />
-        <constructor-arg value="true" index="2" type="boolean" />
-
-    </bean>
-
-
-    <bean id="t1000Empty" class="com.hanada.spring.implementation.T800">
-        <constructor-arg ref="sonyHand" />
-        <constructor-arg ref="sonyLeg" />
-        <constructor-arg ref="toshibaHead" />
-
-    </bean>
-
-    <bean id="sonyHead" class="com.hanada.spring.implementation.sony.SonyHead"/>
-    <bean id="sonyLeg" class="com.hanada.spring.implementation.sony.SonyLeg"/>
-    <bean id="sonyHand" class="com.hanada.spring.implementation.sony.SonyHand"/>
-
-    <bean id="toshibaHead" class="com.hanada.spring.implementation.toshiba.ToshibaHead"/>
-    <bean id="toshibaLeg" class="com.hanada.spring.implementation.toshiba.ToshibaLeg"/>
-    <bean id="toshibaHand" class="com.hanada.spring.implementation.toshiba.ToshibaHand"/>
+    <import resource="beans/t800.xml"/>
 
     <bean class="com.hanada.spring.implementation.MyBeanPostProcessor"/>
 </beans>
