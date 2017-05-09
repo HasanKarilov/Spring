@@ -5,6 +5,8 @@ import com.hanada.spring.interfaces.Head;
 import com.hanada.spring.interfaces.Leg;
 import com.hanada.spring.interfaces.Robot;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Required;
 
 /**
  * Created by hanaria on 5/7/17.
@@ -12,10 +14,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class T800 implements Robot {
 
     @Autowired
+    @Qualifier("sonyHead")
     private Head head;
     @Autowired
+    @Qualifier("sonyLeg")
     private Leg leg;
     @Autowired
+    @Qualifier("sonyHand")
     private Hand hand;
 
     private String color;

@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-lazy-init="true"
-       default-autowire-candidates="false">
+       >
 
     <bean id="sonyHead" class="com.hanada.spring.implementation.sony.SonyHead"/>
     <bean id="sonyLeg" class="com.hanada.spring.implementation.sony.SonyLeg"/>
