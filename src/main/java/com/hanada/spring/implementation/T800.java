@@ -5,6 +5,7 @@ import com.hanada.spring.interfaces.Head;
 import com.hanada.spring.interfaces.Leg;
 import com.hanada.spring.interfaces.Robot;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 /**
@@ -30,6 +31,14 @@ public class T800 implements Robot {
     private int year;
     private boolean isSoungEnable;
 
+    @Bean
+    public T800 model1(){
+        return new T800();
+    }
+    @Bean
+    public T800 model2(){
+        return new T800("Red", 2017, true);
+    }
 
     public T800(){
 
