@@ -12,7 +12,7 @@ public class Start {
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
         T800 modelT800 = (T800) context.getBean("t1000");
-        System.out.println(modelT800);
+        modelT800.doAction();
 
     }
 }

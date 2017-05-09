@@ -5,7 +5,12 @@
        default-lazy-init="true"
        >
 
-    <bean id="sonyHead" class="com.hanada.spring.implementation.sony.SonyHead"/>
+    <bean id="sonyHeadGold" class="com.hanada.spring.implementation.sony.SonyHead">
+        <property name="color" value="Golden"/>
+    </bean>
+    <bean id="sonyHeadSilver" class="com.hanada.spring.implementation.sony.SonyHead">
+        <property name="color" value="Silver"/>
+    </bean>
     <bean id="sonyLeg" class="com.hanada.spring.implementation.sony.SonyLeg"/>
     <bean id="sonyHand" class="com.hanada.spring.implementation.sony.SonyHand"/>
 
