@@ -5,7 +5,9 @@ import com.hanada.spring.interfaces.Head;
 import com.hanada.spring.interfaces.Leg;
 import com.hanada.spring.interfaces.Robot;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /**
@@ -32,10 +34,13 @@ public class T800 implements Robot {
     private boolean isSoungEnable;
 
     @Bean
+    //Scope default = Singleton
+    @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
     public T800 model1(){
         return new T800();
     }
     @Bean
+    @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
     public T800 model2(){
         return new T800("Red", 2017, true);
     }
