@@ -13,13 +13,17 @@ import org.springframework.beans.factory.annotation.Required;
  */
 public class T800 implements Robot {
 
-    @Autowired
+    /*
+    @Autowired(required = false) по умолчанию true, false - значит если найдет элементы
+     (head, leg, hand т.е. не примитивные типы) то все хорошо, если не найдет тоже не страшно. Т.е. будет инициализировано как null
+     */
+    @Autowired(required = false)
     @Qualifier("sonyHeadGolden")
     private Head head;
-    @Autowired
+    @Autowired(required = false)
     @Qualifier("sonyLeg")
     private Leg leg;
-    @Autowired
+    @Autowired(required = false)
     @Qualifier("sonyHand")
     private Hand hand;
 
