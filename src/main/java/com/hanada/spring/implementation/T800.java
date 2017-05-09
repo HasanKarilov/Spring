@@ -30,6 +30,7 @@ public class T800 implements Robot {
     private int year;
     private boolean isSoungEnable;
 
+
     public T800(){
 
     }
