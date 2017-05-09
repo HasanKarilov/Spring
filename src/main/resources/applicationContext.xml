@@ -7,23 +7,6 @@
 
     <!--Для использования аннотаций-->
     <context:annotation-config />
+    <context:component-scan base-package="com.hanada.spring.implementation"/>
 
-    <import resource="beans/sony.xml"/>
-    <import resource="beans/toshiba.xml"/>
-
-    <bean id="t800" class="com.hanada.spring.implementation.T800"
-          p:hand-ref="toshibaHand" p:leg-ref="sonyLeg" p:head-ref="sonyHead">
-
-        <constructor-arg value="silver" index="0" type="java.lang.String" />
-        <constructor-arg value="2005" index="1" type="int" />
-        <constructor-arg value="true" index="2" type="boolean" />
-
-    </bean>
-
-
-    <bean id="t1000" class="com.hanada.spring.implementation.T800">
-
-    </bean>
-
-    <bean class="com.hanada.spring.implementation.MyBeanPostProcessor"/>
 </beans>

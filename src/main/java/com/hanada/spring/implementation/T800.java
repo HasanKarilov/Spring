@@ -5,26 +5,25 @@ import com.hanada.spring.interfaces.Head;
 import com.hanada.spring.interfaces.Leg;
 import com.hanada.spring.interfaces.Robot;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Required;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by hanaria on 5/7/17.
  */
+
+// В @Component бин будет называться как класс компонент, только первая буква с маленькой буквы
+@Component
 public class T800 implements Robot {
 
     /*
     @Autowired(required = false) по умолчанию true, false - значит если найдет элементы
      (head, leg, hand т.е. не примитивные типы) то все хорошо, если не найдет тоже не страшно. Т.е. будет инициализировано как null
      */
-    @Autowired(required = false)
-    @Qualifier("sonyHeadGolden")
+    @Autowired
     private Head head;
-    @Autowired(required = false)
-    @Qualifier("sonyLeg")
+    @Autowired
     private Leg leg;
-    @Autowired(required = false)
-    @Qualifier("sonyHand")
+    @Autowired
     private Hand hand;
 
     private String color;
