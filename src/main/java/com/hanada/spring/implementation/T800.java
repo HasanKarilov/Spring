@@ -4,16 +4,18 @@ import com.hanada.spring.interfaces.Hand;
 import com.hanada.spring.interfaces.Head;
 import com.hanada.spring.interfaces.Leg;
 import com.hanada.spring.interfaces.Robot;
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Created by hanaria on 5/7/17.
  */
-public class T800 implements Robot, InitializingBean, DisposableBean{
+public class T800 implements Robot {
 
+    @Autowired
     private Head head;
+    @Autowired
     private Leg leg;
+    @Autowired
     private Hand hand;
 
     private String color;
@@ -56,12 +58,12 @@ public class T800 implements Robot, InitializingBean, DisposableBean{
         System.out.println("Coler: " + color + " year: " + year + " can sound: " + isSoungEnable);
     }
 
-    public void destroy() throws Exception {
-        System.out.println(this + " - method destroy()");
+    public void initMethod(){
+        System.out.println("init.");
     }
 
-    public void afterPropertiesSet() throws Exception {
-        System.out.println(this + " - method init()");
+    public void destroyMethod(){
+        System.out.println("Destroy.");
     }
 
     public Head getHead() {
@@ -111,5 +113,4 @@ public class T800 implements Robot, InitializingBean, DisposableBean{
     public void setSoungEnable(boolean soungEnable) {
         isSoungEnable = soungEnable;
     }
-
 }

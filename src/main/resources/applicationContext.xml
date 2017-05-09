@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
        default-lazy-init="true">
+
+    <!--Для использования аннотаций-->
+    <context:annotation-config />
 
     <import resource="beans/sony.xml"/>
     <import resource="beans/toshiba.xml"/>
-    <import resource="beans/database.xml"/>
 
     <bean id="t800" class="com.hanada.spring.implementation.T800"
-          p:hand-ref="toshibaHand" p:leg-ref="sonyLeg" p:head-ref="sonyHead"
-    depends-on="databaseBean">
+          p:hand-ref="toshibaHand" p:leg-ref="sonyLeg" p:head-ref="sonyHead">
 
         <constructor-arg value="silver" index="0" type="java.lang.String" />
         <constructor-arg value="2005" index="1" type="int" />
@@ -19,10 +21,7 @@
     </bean>
 
 
-    <bean id="t1000Empty" class="com.hanada.spring.implementation.T800">
-        <constructor-arg ref="sonyHand" />
-        <constructor-arg ref="sonyLeg" />
-        <constructor-arg ref="toshibaHead" />
+    <bean id="t1000" class="com.hanada.spring.implementation.T800">
 
     </bean>
 
