@@ -1,6 +1,5 @@
 package com.hanada.spring.implementation;
 
-import com.hanada.spring.implementation.sony.SonyHead;
 import com.hanada.spring.interfaces.Hand;
 import com.hanada.spring.interfaces.Head;
 import com.hanada.spring.interfaces.Leg;
@@ -15,7 +14,7 @@ import org.springframework.beans.factory.annotation.Required;
 public class T800 implements Robot {
 
     @Autowired
-    @Qualifier("sonyHeadGold")
+    @Qualifier("sonyHeadGolden")
     private Head head;
     @Autowired
     @Qualifier("sonyLeg")
@@ -61,8 +60,7 @@ public class T800 implements Robot {
         head.calc();
         leg.go();
         hand.catchSomething();
-        SonyHead sonyHead = (SonyHead) head;
-        System.out.println("Color: " + color + " year: " + year + " can sound: " + isSoungEnable + " " + sonyHead.getColor());
+        System.out.println("Color: " + color + " year: " + year + " can sound: " + isSoungEnable);
     }
 
     public void initMethod(){
