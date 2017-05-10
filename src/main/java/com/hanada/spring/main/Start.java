@@ -13,8 +13,14 @@ public class Start {
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
         SomeService service = (SomeService) context.getBean("someService");
-        service.getDoubleValue();
         service.getIntValue();
+
+        /*
+        init in MyLogger        - Тип совета before
+        Some service            - В теле нашего метода в SomeService
+        close in MyLogger       - Тип совета after
+        5 in my simple Logger   - Тип совета after-returning
+         */
 
     }
 }

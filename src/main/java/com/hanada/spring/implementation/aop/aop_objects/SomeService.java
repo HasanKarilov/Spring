@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class SomeService {
     public int getIntValue() {
+
+        System.out.println("Some service");
         return 5;
     }
 
