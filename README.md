@@ -65,3 +65,29 @@ Prototype
          com.hanada.spring.implementation.T800@43814d18
  
  
+Aspect Oriented Programming
+===============================
+
+Цель AOP - разделение основного функционала от второстепенного.
+AOP - это методика программирования в рамках классовой парадигмы, основанная на понятии аспекта - блока кода инкапсулирующего сквозное поведение в составе классов и повторно используемых модулей. 
+
+Для того что бы привести AOP в действие, мы должны обернуть необходимый код в советы. Этот код называется join point или точка соединения, а pointcut является набором join points.
+
+В applicationContext.xml мы создали аспект, в котором указываем наш логгер (ref="myLogger") и создаем pointcut для методов SomeService. 
+   
+       
+        <aop:config>
+                <!--@Component class MyLogger-->
+                <aop:aspect id="log" ref="myLogger">
+                    <aop:pointcut id="getValue"
+                                  expression="execution(* com.hanada.spring.implementation.aop.aop_objects.SomeService.*(..))" />
+                    <aop:before pointcut-ref="getValue" method="init" />
+                    <aop:after pointcut-ref="getValue" method="close" />
+                    <aop:after-returning pointcut-ref="getValue" returning="obj" method="printValue" />
+                </aop:aspect>
+            </aop:config>
+            
+            
+Нужный функционал (Join Points) мы обьявляем в pointcut, обьявляем советы (Advice), которые будем использовать для данного pointcut'а и средствами AOP (создается так называемый перехватчик или Proxy, который берет управление на себя) "внедряем" в код приложения. Такую функциональность еще называют сквозной или cross-cutting.
+
+С помощью AOP мы можем выполнять дополнительные действия над существующим кодом, при этом не изменяя его. Заметь обьекты (бины) MyLogger и SomeService друг о друге ни чего не знают.
